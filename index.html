@@ -1,0 +1,52 @@
+import React from 'react';
+import { ExternalLink } from 'lucide-react';
+
+const MatriXComponent = () => {
+  return (
+    <div className="relative flex flex-col items-center justify-center min-h-screen bg-black text-green-500 font-mono overflow-hidden">
+      {/* Custom keyframes for button glow */}
+      <style jsx>{`
+        @keyframes buttonGlow {
+          0%, 100% { box-shadow: 0 0 5px #22c55e, 0 0 10px #22c55e, 0 0 15px #22c55e; }
+          50% { box-shadow: 0 0 10px #22c55e, 0 0 20px #22c55e, 0 0 30px #22c55e; }
+        }
+        .animate-button-glow {
+          animation: buttonGlow 2s ease-in-out infinite;
+        }
+      `}</style>
+
+      {/* Extreme glow effects */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200vw] h-[200vh]">
+        <div className="absolute inset-0 bg-green-500 opacity-10 blur-[100px] animate-pulse"></div>
+        <div className="absolute inset-0 bg-green-600 opacity-5 blur-[150px] animate-pulse animation-delay-1000"></div>
+        <div className="absolute inset-0 bg-green-400 opacity-5 blur-[200px] animate-pulse animation-delay-2000"></div>
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10 text-center">
+        <div className="text-6xl mb-4 animate-pulse font-bold tracking-widest text-green-400 drop-shadow-[0_0_10px_rgba(74,222,128,0.5)]">
+          MatriX
+        </div>
+        <div className="text-3xl mb-16 animate-pulse">Coming Soon</div>
+        <div className="border border-green-500 p-10 rounded-lg backdrop-blur-md bg-black/30 max-w-lg mx-auto">
+          <h2 className="text-2xl mb-6 font-semibold">The Future is Near</h2>
+          <p className="mb-8 text-lg">MatriX is preparing to revolutionize the decentralized world. Stay tuned for the launch.</p>
+          <p className="mb-8 text-lg">Be among the first to know:</p>
+          <a 
+            href="https://t.me/MatriXGroup" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center justify-center bg-green-500 text-black py-3 px-8 rounded-lg hover:bg-green-400 transition-all duration-300 font-bold text-xl animate-button-glow"
+          >
+            Join our Telegram <ExternalLink className="ml-2" size={24} />
+          </a>
+        </div>
+        <div className="mt-16 text-lg opacity-70">
+          The choice is yours. Red pill or blue pill?
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MatriXComponent;
